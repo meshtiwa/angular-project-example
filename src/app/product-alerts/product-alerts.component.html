@@ -1,0 +1,4 @@
+<p *ngIf="product && product.price > 700">
+  <button type="button" (click)="notify.emit()">Notify Me</button>
+  <!-- notify is an eventEmitter object that has the method to emit an event on click which is sent to <app-product-alerts> in product-list-compeonent.html -->
+</p>
