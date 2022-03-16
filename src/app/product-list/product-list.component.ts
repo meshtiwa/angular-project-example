@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { NgForm } from '@angular/forms';
 import { products } from '../products';
 
 @Component({
@@ -15,6 +15,9 @@ export class ProductListComponent {
   }
   onNotify() {
     window.alert('ur gonna be notified when the product goes on sale!');
+  }
+  onSubmit(f: NgForm) {
+    window.alert('hi');
   }
 }
 

@@ -1,23 +1,26 @@
 <h2>Products</h2>
 
 <!-- ngFor makes div repeat for each product of the list -->
-<div *ngFor="let product of products">
+<div *ngFor="let prod of products">
   <h3>
-    <a [title]="product.name + ' details'">
-      {{ product.name }}
+    <a [title]="prod.name + ' details'">
+      {{ prod.name }}
     </a>
     <!-- we are doing "interpolation" here -->
     <!-- we get all the product names from the product.ts file that we imported in the product component! -->
   </h3>
-  <p *ngIf="product.description">Description: {{ product.description }}</p>
+  <p *ngIf="prod.description">Description: {{ prod.description }}</p>
   <button (click)="share()">Share</button>
 
-  <app-product-alerts [product]="product" (notify)="onNotify()">
+  <!-- <p *ngIf="prod && prod.price > 700">
+    <button type="button" (click)="onNotify()">Notify Me</button>
+     notify is an eventEmitter object that has the method to emit an event on click which is sent to <app-product-alerts> in product-list-compeonent.html 
+     </p> -->
+
+  <app-product-alerts [product]="prod" (notify)="onNotify()">
   </app-product-alerts>
 </div>
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->
+<!-- <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  <input name="first" ngModel required #first="ngModel" />
+  <button type="submit">Submit</button>
+</form> -->
