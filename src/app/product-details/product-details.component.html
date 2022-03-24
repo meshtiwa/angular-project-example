@@ -1,7 +1,11 @@
 <h2>Product Details</h2>
 
-<div *ngIf="product"> <!-- if the route we are-->
+<div *ngIf="product">
+  <!-- This is the product where the id matches the current route-->
+  <!-- if a product exists in the route we are in-->
   <h3>{{ product.name }}</h3>
   <h4>{{ product.price | currency }}</h4>
   <p>{{ product.description }}</p>
+
+  <button type="button" (click)="addToCart(product)">Buy</button>
 </div>
